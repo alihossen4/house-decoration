@@ -9,8 +9,7 @@ export default function Home() {
      <div className="container">
       <div className="flex">
         <div className="logo">
-          {/* <img src='' alt="logo" className="logo"/> */}
-          
+
         </div>
         <div className="menu">
           <ul>
