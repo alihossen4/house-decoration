@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import logo from "../public/logo/logo.png";
 
 export default function Home() {
   return (
     // <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <section className="header-section">
      <div className="container">
       <div className="flex">
-        <div className="logo"></div>
+        <div className="logo">
+          {/* <img src='' alt="logo" className="logo"/> */}
+          
+        </div>
         <div className="menu">
           <ul>
             <li><Link href="/">Home</Link></li>
@@ -19,5 +24,6 @@ export default function Home() {
       </div>
      {/* </div> */}
     </div>
+  </section>
   );
 }
