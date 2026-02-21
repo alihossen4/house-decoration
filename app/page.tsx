@@ -12,7 +12,7 @@ export default function Home() {
 
         </div>
         <div className="menu">
-          <ul>
+          <ul className="flex menu-ul font-xl ">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Products</Link></li>
             <li><Link href="/categories">Categories</Link></li>
