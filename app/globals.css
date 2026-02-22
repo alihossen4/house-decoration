@@ -41,7 +41,7 @@ body {
   cursor: pointer;
 }
 header{
-  height: 5em;
+  height: 6em;
   position: sticky;
   top: 0;
   transition: var(--background) 0.4s ease-in-out;
