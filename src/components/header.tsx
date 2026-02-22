@@ -24,7 +24,7 @@ export default function Header() {
   return(
     <>
     {/* // <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"> */}
-    <header className={`fixed top-0 left-0 right-0 z-50 py-2 transition-all ease-in-out ${isScroll? "bg-[#2b332f]  h-[180px]":" py-2"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 py-2 transition-all ease-in-out ${isScroll? "bg-[#2b332f]":" py-2"}`}>
      <div className="container">
       <div className="flex space-between">
         <div className="logo">
@@ -39,15 +39,15 @@ export default function Header() {
             <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
-        <div className="cart-section flex my-auto pt-5 gap-5">
+        <div className="cart-section flex my-auto transition-all ease-in-out pt-5 gap-5">
         <div className="search relative mr-34 ">
 
-          <input type="text" className="search-input absolute top-[-15] p-0 text-[18px] text-[#fff]" />
+          <input type="text" className="search-input absolute top-[-18] p-0 text-[18px] text-[#fff]" />
           <FiSearch className="text-[#fff] h-[35px] w-[35px] absolute top-0 left-25"/>
         </div>
 
           <FiShoppingCart className="text-[#ffb8ab] h-[35px] w-[35px]"/>
-          <FaUser className="h-[35px] w-[35px] text-[#08803e]"/>
+          <FaUser className="h-[35px] w-[35px] text-[#02bf01]"/>
         </div>
      {/* </div> */}
       </div>

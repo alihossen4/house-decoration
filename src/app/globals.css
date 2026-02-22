@@ -1,10 +1,16 @@
 @import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"); */
 
 :root {
   --background: #000000;
   --foreground: #171717;
 }
-
+.arimo-font {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -26,16 +32,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  /* padding-top: 3em; */
 }
-
 .menubar-section{
-  background-image: url('../public/cover/cover4.jpg');
+  background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../public/cover/cover4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 800px;
-  /* opacity: 0.8; */
   margin: 0 auto;
   z-index: -100;
   cursor: pointer;
@@ -44,14 +47,12 @@ header{
   height: 6em;
   position: sticky;
   top: 0;
-  transition: var(--background) 0.4s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   
 }
-header.scrolled{
-  background: #08803e;
-}
+
 .logo{
-  background-image: url("../public/logo/logo.png");
+  background-image: url("../../public/logo/logo.png");
   z-index: 50;
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,7 +68,7 @@ header.scrolled{
   text-align: center;
   margin: auto auto;
   margin-top: 30px;
-  /* transform: translateY(-50%); */
+
   z-index: 60;
   
 }
