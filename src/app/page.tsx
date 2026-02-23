@@ -5,7 +5,7 @@ export default function Home() {
   return(
     <>
     <section className="menubar-section">
-      <Header />
+    <Header />
       <div className="container">
       <div className="heading-section w-180 h-200 mt-50">
       <div className="heading ">

@@ -1,9 +1,9 @@
 import Header from "../../components/header";
-export default function About(){
+export default function Categories(){
     return(
         <>
             <Header />
-            <h1>About page</h1>
+            <h1>Categories page</h1>
         </>
     )
 }
