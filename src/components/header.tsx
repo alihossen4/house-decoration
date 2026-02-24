@@ -27,7 +27,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
   const pathname = usePathname();
   const isActive = (path:any)=> path===pathname;
 
@@ -36,11 +35,11 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 py-2 transition-all ease-in-out  ${isScroll? "bg-[#2b332f]":" py-2"}`}>
      <div className="container">
       <div className="flex space-between">
-        <a href="/">
+        <Link href="/">
          <div className="logo">
 
         </div>
-        </a>
+        </Link>
         <div className="menu m-0">
           <ul className="flex menu-ul font-xl ">
             {
