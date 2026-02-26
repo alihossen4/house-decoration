@@ -4,7 +4,13 @@ import MyImage from "./CartImage";
 import React from "react";
 export default function Category(){
 const listItem= [
-    {id:1, name:""}
+    {id:1, name:"Bedroom"},
+    {id:2, name:"Dining Room"},
+    {id:3, name:"Kitchen"},
+    {id:4, name:"Living Room"},
+    {id:5, name:"Meeting Room"},
+    {id:6, name:"Study Room"},
+    {id:7, name:"Workspace"},
 ]
 type Props = {
     name: string;
@@ -29,7 +35,17 @@ const Cart =({name,children}:Props)=>{
                         <h1 className="center my-5 mx-auto">Explore by Category</h1>
                     <div className="flex">
                         <div className="search-item">
-                            
+                            <ul>
+                                {
+                                    listItem.map((list)=>{
+                                        return(
+                                            <li key={list.id}>
+                                                {list.name}
+                                            </li>
+                                        );
+                                    })
+                                }
+                            </ul>
                         </div>
                         <div className="carts mt-20">
                             <Cart name="Bedroom">
