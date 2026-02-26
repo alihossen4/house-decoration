@@ -45,7 +45,7 @@ export default function Header() {
             {
               NavLinks.map((link)=>{
                 return(
-                  <li key={link.id} className="relative">
+                  <li key={link.id} className="relative menu-li">
                     <Link href={link.path} className={`${isActive(link.path)? "active": ""}`}>
                       {link.name}
                     </Link>
