@@ -5,6 +5,8 @@ type MyImageProps = {
   alt: string;
   width: number;
   height: number;
+  children:React.ReactNode;
+  className: string
 };
 
 export default function MyImage({
@@ -12,6 +14,14 @@ export default function MyImage({
   alt,
   width,
   height,
+  children,
+  className
 }: MyImageProps) {
-  return <Image src={src} alt={alt} width={width} height={height} />;
+  return (
+    <>
+    {children}
+    <Image src={src} alt={alt} width={width} height={height} className={className}/>
+    </>
+
+);
 }

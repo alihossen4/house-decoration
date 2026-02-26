@@ -1,11 +1,9 @@
 "use client"
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
-import bedroom from "@/public/fronts-room/dining-room.jpg";
+import bedroom from "@/public/rooms/bedrooms/bedrooms1.jpg";
 import MyImage from "./CartImage";
 import React, { useState } from "react";
-export default function Category(){
-const [activeTab, setActiveTab] = useState(false);
 const listItem= [
     {id:1, name:"Bedroom"},
     {id:2, name:"Dining Room"},
@@ -15,19 +13,35 @@ const listItem= [
     {id:6, name:"Study Room"},
     {id:7, name:"Workspace"},
 ]
+export default function Category(){
+const [activeTab, setActiveTab] = useState<number | null>(0);
 type Props = {
     name: string;
-    children: React.ReactNode;
+    // children: React.ReactNode;
 }
-console.log(listItem[0])
-const Cart =({name,children}:Props)=>{
+console.log(listItem[0].id);
+const Cart =({name}:Props)=>{
     return(
         <>
-            <div className="img-container">
-                {children}
-                    <h2>{name}</h2>
-                    <button>Explore</button>
+            <div className="img-container container">
                 
+                <div className="image flex grid grid-cols-2 gap-4">
+                    {
+                        // Array.from()
+                        listItem.map((list)=>{
+                            return(
+                                <>
+                                    
+                                    <MyImage key={list.id} src={`${bedroom}`} alt="bedroom" width={200} height={250} className="w-[150px] h-[200px] grid grid-cols-2 relative">
+                                    <h2 className="absolute">{name}</h2>
+                                    <button className="absolute">Explore</button>
+                                    </MyImage>
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                    
             </div>
         </>
     );
@@ -47,7 +61,7 @@ const Cart =({name,children}:Props)=>{
                                 {
                                     listItem.map((list)=>{
                                         return(
-                                            <li key={list.id} className="search-list-li cursor-pointer">
+                                            <li key={list.id} onClick={()=>setActiveTab(list.id)} className={`search-list-li cursor-pointer ${activeTab ===list.id? "bg-[#04c0a7] text-green":""}`} >
                                                 {list.name}
                                             </li>
                                         );
@@ -56,9 +70,10 @@ const Cart =({name,children}:Props)=>{
                             </ul>
                         </div>
                         <div className="carts mt-20 ml-10">
-                            <Cart name="Bedroom">
+                            <Cart name="Bedroom"/>
+                            {/* <Cart name="Bedroom">
                                 <MyImage src={bedroom} alt="bedroom" width={200} height={250}/>
-                            </Cart>
+                            </Cart> */}
                         </div>
                     </div>
                 </div>
