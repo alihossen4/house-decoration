@@ -1,8 +1,7 @@
 "use client"
 import { FiSearch } from "react-icons/fi";
-import Image from "next/image";
-import bedroom from "@/public/rooms/bedrooms/bedrooms1.jpg";
-import MyImage from "./CartImage";
+import {  FaArrowRight } from 'react-icons/fa';
+
 import React, { useState } from "react";
 import BedroomCart from "./Carts/BedroomCart";
 import DiningroomCart from "./Carts/DiningRoomCart";
@@ -59,9 +58,9 @@ const Contents = () =>{
                         <div className="search-item">
                             <div className="search-bar relative">
                                 <FiSearch className="text-[gray] h-[30px] w-[30px] absolute top-[15px] left-5 absolute"/>
-                                <input type="text" className="outline-none bg-[#fff] p-4 rounded-lg text-xl pl-15 w-[96%]" placeholder="Search"/>
+                                <input type="text" className="outline-none bg-[#fff] p-4 rounded-lg text-xl pl-15 w-[97%]" placeholder="Search"/>
                             </div>
-                            <ul className="text-[50px]">
+                            <ul className="text-[50px] mt-15">
                                 
                                 <li onClick={()=>setActiveTab(listItem[0].id)} className={`search-list-li cursor-pointer ${activeTab===listItem[0].id? "bg-amber-600 text-amber-50":""}`}>
                                     Bedroom
@@ -90,6 +89,7 @@ const Contents = () =>{
                                 <li   onClick={()=>setActiveTab(listItem[6].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[6].id? "bg-amber-600 text-amber-50":""}`} >
                                     Workspace
                                 </li>
+                                <button className="text-xl bg-[#79928f] px-5 py-4 text-amber-50 rounded-xl w-[70%] ">All Categories<span className="mt-1.5 float-right"><FaArrowRight /></span></button>
                             </ul>
                         </div>
                         <div className="carts ml-10">
