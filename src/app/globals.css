@@ -35,6 +35,7 @@ body {
   color: var(--foreground);
   font-family:"Inter", Arial, Helvetica, sans-serif, ;
   letter-spacing: 0.5px;
+  box-sizing: border-box;
 }
 .menubar-section{
   background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../public/cover/cover4.jpg');
@@ -115,4 +116,5 @@ li.search-list-li{
   padding: 15px;
   margin: 10px;
   font-size: 20px;
+  margin-bottom: 25px;
 }

@@ -16,7 +16,7 @@ const listItem= [
     {id:2, name:"Dining Room"},
     {id:3, name:"Living Room"},
     {id:4, name:"Meeting Room"},
-    {id:6, name:"Study Room"},
+    {id:5, name:"Study Room"},
     {id:6, name:"Kitchen"},
     {id:7, name:"Workspace"},
 ]
@@ -54,45 +54,45 @@ const Contents = () =>{
         <>
             <section>
                 <div className="container">
-                        <h1 className="center my-10 w-[500] text-[45px] mx-auto font-[700]">Explore by Category</h1>
+                        <h1 className="center my-15 pl-15 w-[500] text-[45px] mx-auto font-[700]">Explore by Category</h1>
                     <div className="flex">
                         <div className="search-item">
                             <div className="search-bar relative">
                                 <FiSearch className="text-[gray] h-[30px] w-[30px] absolute top-[15px] left-5 absolute"/>
                                 <input type="text" className="outline-none bg-[#fff] p-4 rounded-lg text-xl pl-15 w-[96%]" placeholder="Search"/>
                             </div>
-                            <ul>
+                            <ul className="text-[50px]">
                                 
-                                <li key={listItem[0].id} onClick={()=>setActiveTab(listItem[0].id)} className={`search-list-li cursor-pointer ${activeTab===listItem[0].id? "bg-amber-600":""}`}>
+                                <li onClick={()=>setActiveTab(listItem[0].id)} className={`search-list-li cursor-pointer ${activeTab===listItem[0].id? "bg-amber-600 text-amber-50":""}`}>
                                     Bedroom
                                     
                                 </li>
-                                <li key={listItem[1].id } onClick={()=>setActiveTab(listItem[1].id)} className={`search-list-li cursor-pointer ${activeTab  ===listItem[1].id? "bg-amber-600":""}`}>
+                                <li onClick={()=>setActiveTab(listItem[1].id)} className={`search-list-li cursor-pointer ${activeTab  ===listItem[1].id? "bg-amber-600 text-amber-50":""}`}>
                                     Dining Room
                                     
                                 </li>
-                               <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[2].id)}className={`search-list-li cursor-pointer ${activeTab ===listItem[2].id? "bg-amber-600":""}`}>
+                               <li onClick={()=>setActiveTab(listItem[2].id)}className={`search-list-li cursor-pointer ${activeTab ===listItem[2].id? "bg-amber-600 text-amber-50":""}`}>
                                     Living Room
                                     
                                 </li>
-                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[3].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[3].id? "bg-amber-600":""}`} >
+                                <li onClick={()=>setActiveTab(listItem[3].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[3].id? "bg-amber-600 text-amber-50":""}`} >
                                     Meeting Room
                                     
                                 </li>
-                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[4].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[4].id? "bg-amber-600":""}`} >
+                                <li onClick={()=>setActiveTab(listItem[4].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[4].id? "bg-amber-600 text-amber-50":""}`} >
                                     Study Room
                                     
                                 </li>
-                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[5].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[5].id? "bg-amber-600":""}`} >
+                                <li   onClick={()=>setActiveTab(listItem[5].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[5].id? "bg-amber-600 text-amber-50":""}`} >
                                     Kitchen
                                     
                                 </li>
-                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[6].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[6].id? "bg-amber-600":""}`} >
+                                <li   onClick={()=>setActiveTab(listItem[6].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[6].id? "bg-amber-600 text-amber-50":""}`} >
                                     Workspace
                                 </li>
                             </ul>
                         </div>
-                        <div className="carts -mt-2 ml-10">
+                        <div className="carts ml-10">
                             
                             {activeTab&& Contents() }
                         </div>
