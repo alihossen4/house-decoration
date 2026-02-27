@@ -4,76 +4,97 @@ import Image from "next/image";
 import bedroom from "@/public/rooms/bedrooms/bedrooms1.jpg";
 import MyImage from "./CartImage";
 import React, { useState } from "react";
+import BedroomCart from "./Carts/BedroomCart";
+import DiningroomCart from "./Carts/DiningRoomCart";
+import LivingroomCart from "./Carts/LivingroomCart";
+import MeetingroomCart from "./Carts/MeetingroomCart";
+import Kitchen from "./Carts/Kitchen";
+import StudyroomCart from "./Carts/StudyroomCart";
+import WorkspaceCart from "./Carts/WorkspaceCart";
 const listItem= [
     {id:1, name:"Bedroom"},
     {id:2, name:"Dining Room"},
-    {id:3, name:"Kitchen"},
-    {id:4, name:"Living Room"},
-    {id:5, name:"Meeting Room"},
+    {id:3, name:"Living Room"},
+    {id:4, name:"Meeting Room"},
     {id:6, name:"Study Room"},
+    {id:6, name:"Kitchen"},
     {id:7, name:"Workspace"},
 ]
 export default function Category(){
-const [activeTab, setActiveTab] = useState<number | null>(0);
-type Props = {
-    name: string;
-    // children: React.ReactNode;
-}
-console.log(listItem[0].id);
-const Cart =({name}:Props)=>{
-    return(
-        <>
-            <div className="img-container container">
+const [activeTab, setActiveTab] = useState<number | null>(1);
+const Contents = () =>{
+    const activeItem = listItem.find(item=> item.id ===activeTab )
+    if(!activeItem) return<BedroomCart name="Bedroom"/>;
+    
+        switch(activeItem.name) {
+            case "Bedroom":
+                return <BedroomCart name="Bedroom"/>;
+            case "Dining Room":
+                return <DiningroomCart name="Dining Room"/>;
                 
-                <div className="image flex grid grid-cols-2 gap-4">
-                    {
-                        // Array.from()
-                        listItem.map((list)=>{
-                            return(
-                                <>
-                                    
-                                    <MyImage key={list.id} src={bedroom} alt="bedroom" width={200} height={250} className="w-[150px] h-[200px] grid grid-cols-2 relative">
-                                    <h2 className="absolute">{name}</h2>
-                                    <button className="absolute">Explore</button>
-                                    </MyImage>
-                                </>
-                            )
-                        })
-                    }
-                </div>
+            case "Living Room":
+                return <LivingroomCart name="Living Room"/>;
                     
-            </div>
-        </>
-    );
+            case "Meeting Room":
+                return <MeetingroomCart name="Meeting Room"/>;
+                
+            case "Study Room":
+                return <StudyroomCart name="Study Room"/>;
+            case "Kitchen":
+                return <Kitchen name="Kitchen"/>;
+                
+            case "Workspace":
+                return <WorkspaceCart name="Workspace"/>;
+                
+        }
+    
 }
+
     return(
         <>
             <section>
                 <div className="container">
-                        <h1 className="center my-5 w-[500] text-[50px] mx-auto font-[600]">Explore by Category</h1>
+                        <h1 className="center my-10 w-[500] text-[45px] mx-auto font-[700]">Explore by Category</h1>
                     <div className="flex">
                         <div className="search-item">
                             <div className="search-bar relative">
                                 <FiSearch className="text-[gray] h-[30px] w-[30px] absolute top-[15px] left-5 absolute"/>
-                                <input type="text" className="outline-none bg-[#fff] p-4 rounded-lg text-xl pl-15 w-[95%]" placeholder="Search"/>
+                                <input type="text" className="outline-none bg-[#fff] p-4 rounded-lg text-xl pl-15 w-[96%]" placeholder="Search"/>
                             </div>
                             <ul>
-                                {
-                                    listItem.map((list)=>{
-                                        return(
-                                            <li key={list.id} onClick={()=>setActiveTab(list.id)} className={`search-list-li cursor-pointer ${activeTab ===list.id? "bg-[#04c0a7] text-green":""}`} >
-                                                {list.name}
-                                            </li>
-                                        );
-                                    })
-                                }
+                                
+                                <li key={listItem[0].id} onClick={()=>setActiveTab(listItem[0].id)} className={`search-list-li cursor-pointer ${activeTab===listItem[0].id? "bg-amber-600":""}`}>
+                                    Bedroom
+                                    
+                                </li>
+                                <li key={listItem[1].id } onClick={()=>setActiveTab(listItem[1].id)} className={`search-list-li cursor-pointer ${activeTab  ===listItem[1].id? "bg-amber-600":""}`}>
+                                    Dining Room
+                                    
+                                </li>
+                               <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[2].id)}className={`search-list-li cursor-pointer ${activeTab ===listItem[2].id? "bg-amber-600":""}`}>
+                                    Living Room
+                                    
+                                </li>
+                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[3].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[3].id? "bg-amber-600":""}`} >
+                                    Meeting Room
+                                    
+                                </li>
+                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[4].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[4].id? "bg-amber-600":""}`} >
+                                    Study Room
+                                    
+                                </li>
+                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[5].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[5].id? "bg-amber-600":""}`} >
+                                    Kitchen
+                                    
+                                </li>
+                                <li key={listItem[0].id}  onClick={()=>setActiveTab(listItem[6].id)} className={`search-list-li cursor-pointer ${activeTab ===listItem[6].id? "bg-amber-600":""}`} >
+                                    Workspace
+                                </li>
                             </ul>
                         </div>
-                        <div className="carts mt-20 ml-10">
-                            {/* <Cart name="Bedroom"/> */}
-                            {/* <Cart name="Bedroom">
-                                <MyImage src={bedroom} alt="bedroom" width={200} height={250}/>
-                            </Cart> */}
+                        <div className="carts -mt-2 ml-10">
+                            
+                            {activeTab&& Contents() }
                         </div>
                     </div>
                 </div>
