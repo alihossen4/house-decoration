@@ -32,7 +32,7 @@ const Cart =({name}:Props)=>{
                             return(
                                 <>
                                     
-                                    <MyImage key={list.id} src={`${bedroom}`} alt="bedroom" width={200} height={250} className="w-[150px] h-[200px] grid grid-cols-2 relative">
+                                    <MyImage key={list.id} src={bedroom} alt="bedroom" width={200} height={250} className="w-[150px] h-[200px] grid grid-cols-2 relative">
                                     <h2 className="absolute">{name}</h2>
                                     <button className="absolute">Explore</button>
                                     </MyImage>
@@ -70,7 +70,7 @@ const Cart =({name}:Props)=>{
                             </ul>
                         </div>
                         <div className="carts mt-20 ml-10">
-                            <Cart name="Bedroom"/>
+                            {/* <Cart name="Bedroom"/> */}
                             {/* <Cart name="Bedroom">
                                 <MyImage src={bedroom} alt="bedroom" width={200} height={250}/>
                             </Cart> */}
